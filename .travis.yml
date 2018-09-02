@@ -23,3 +23,6 @@ script:
 env:
   global:
     - PERL_USE_UNSAFE_INC=0
+  matrix:
+    - ALIEN_INSTALL_TYPE=share
+    - ALIEN_INSTALL_TYPE=system
