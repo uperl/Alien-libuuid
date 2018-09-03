@@ -7,4 +7,12 @@ share {
   );
   plugin Extract => 'tar.gz';
   plugin 'Build::Autoconf';
+
+  build [
+    '%{configure}',
+    '%{make}',
+    '%{make} install',
+  ];
+
+  plugin 'Gather::IsolateDynamic';
 }
