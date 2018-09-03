@@ -8,4 +8,8 @@ use base qw( Alien::Base );
 # ABSTRACT: Find or download and install libuuid
 # VERSION
 
+# ALIEN SYNOPSIS
+# ALIEN DESCRIPTION
+# ALIEN SEE ALSO
+
 1;
