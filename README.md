@@ -37,6 +37,15 @@ In your Makefile.PL:
       ...
     );
 
+In your [FFI::Platypus](https://metacpan.org/pod/FFI::Platypus) script or module:
+
+    use FFI::Platypus;
+    use Alien::libuuid;
+    
+    my $ffi = FFI::Platypus->new(
+      lib => [ Alien::libuuid->dynamic_libs ],
+    );
+
 # DESCRIPTION
 
 This distribution provides libuuid so that it can be used by other 
