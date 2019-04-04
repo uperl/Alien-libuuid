@@ -3,6 +3,6 @@
 set -ex
 
 perl Makefile.PL
-cpanm --installdeps .
+cpanm -n --installdeps .
 make
 make test TEST_VERBOSE=1
