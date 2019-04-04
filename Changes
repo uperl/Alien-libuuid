@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Use https instead of http
 
 0.01      2018-09-03 09:11:19 -0400
   - initial version
