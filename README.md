@@ -1,50 +1,53 @@
-# Alien::libuuid [![Build Status](https://secure.travis-ci.org/plicease/Alien-libuuid.png)](http://travis-ci.org/plicease/Alien-libuuid)
+# Alien::libuuid [![Build Status](https://travis-ci.org/plicease/Alien-libuuid.svg)](http://travis-ci.org/plicease/Alien-libuuid)
 
 Find or download and install libuuid
 
 # SYNOPSIS
 
-In your Build.PL:
-
-    use Module::Build;
-    use Alien::libuuid;
-    my $builder = Module::Build->new(
-      ...
-      configure_requires => {
-        'Alien::libuuid' => '0',
-        ...
-      },
-      extra_compiler_flags => Alien::libuuid->cflags,
-      extra_linker_flags   => Alien::libuuid->libs,
-      ...
-    );
-    
-    $build->create_build_script;
-
 In your Makefile.PL:
 
-    use ExtUtils::MakeMaker;
-    use Config;
-    use Alien::libuuid;
-    
-    WriteMakefile(
-      ...
-      CONFIGURE_REQUIRES => {
-        'Alien::libuuid' => '0',
-      },
-      CCFLAGS => Alien::libuuid->cflags . " $Config{ccflags}",
-      LIBS    => [ Alien::libuuid->libs ],
-      ...
-    );
+```perl
+use ExtUtils::MakeMaker;
+use Alien::Base::Wrapper ();
+
+WriteMakefile(
+  Alien::Base::Wrapper->new('Alien::libuuid')->mm_args2(
+    # MakeMaker args
+    NAME => 'Kafka::Librd',
+    ...
+  ),
+);
+```
+
+In your Build.PL:
+
+```perl
+use Module::Build;
+use Alien::Base::Wrapper qw( Alien::libuuid !export );
+
+my $builder = Module::Build->new(
+  ...
+  configure_requires => {
+    'Alien::libuuid' => '0',
+    ...
+  },
+  Alien::Base::Wrapper->mb_args,
+  ...
+);
+
+$build->create_build_script;
+```
 
 In your [FFI::Platypus](https://metacpan.org/pod/FFI::Platypus) script or module:
 
-    use FFI::Platypus;
-    use Alien::libuuid;
-    
-    my $ffi = FFI::Platypus->new(
-      lib => [ Alien::libuuid->dynamic_libs ],
-    );
+```perl
+use FFI::Platypus;
+use Alien::libuuid;
+
+my $ffi = FFI::Platypus->new(
+  lib => [ Alien::libuuid->dynamic_libs ],
+);
+```
 
 # DESCRIPTION
 
