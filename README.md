@@ -64,7 +64,11 @@ for the use of other modules.
 
 # AUTHOR
 
-Graham Ollis <plicease@cpan.org>
+Author: Graham Ollis <plicease@cpan.org>
+
+Contributors:
+
+Thibault Duponchelle (tib)
 
 # COPYRIGHT AND LICENSE
 
