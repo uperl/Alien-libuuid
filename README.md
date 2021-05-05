@@ -1,4 +1,4 @@
-# Alien::libuuid [![Build Status](https://travis-ci.org/plicease/Alien-libuuid.svg)](http://travis-ci.org/plicease/Alien-libuuid)
+# Alien::libuuid ![linux](https://github.com/plicease/Alien-libuuid/workflows/linux/badge.svg)
 
 Find or download and install libuuid
 
@@ -13,7 +13,7 @@ use Alien::Base::Wrapper ();
 WriteMakefile(
   Alien::Base::Wrapper->new('Alien::libuuid')->mm_args2(
     # MakeMaker args
-    NAME => 'Kafka::Librd',
+    NAME => 'My::XS',
     ...
   ),
 );
