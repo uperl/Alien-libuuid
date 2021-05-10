@@ -1,4 +1,4 @@
-# Alien::libuuid ![linux](https://github.com/plicease/Alien-libuuid/workflows/linux/badge.svg)
+# Alien::libuuid ![linux](https://github.com/plicease/Alien-libuuid/workflows/linux/badge.svg) ![macos](https://github.com/plicease/Alien-libuuid/workflows/macos/badge.svg)
 
 Find or download and install libuuid
 
