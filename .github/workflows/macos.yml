@@ -35,7 +35,7 @@ jobs:
 
       - name: Set up Perl
         run: |
-          brew install perl
+          brew install perl libffi libarchive
           curl https://cpanmin.us | perl - App::cpanminus -n
           echo "/Users/runner/perl5/bin" >> $GITHUB_PATH
 
@@ -64,7 +64,7 @@ jobs:
       - name: Install libuuid
         run: |
           brew tap plicease/homebrew-plicease
-          brew install perl ${{ matrix.alien.packages }}
+          brew install perl ${{ matrix.alien.packages }} libffi libarchive
 
       - name: Install Dynamic Dependencies
         run: dzil run --no-build 'cpanm --installdeps .'
