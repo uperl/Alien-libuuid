@@ -1,2 +1,4 @@
 /Alien-libuuid-*
 /.build
+*.old
+*.orig
